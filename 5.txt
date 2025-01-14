@@ -1,0 +1,198 @@
+/*Write a java program to implement the following 
+a. Create a superclass called student with data members as USN, Name and 
+marks 
+b. Create a subclasses called UG_student having the fields USN, Name, and total 
+no. of semesters (ToS) and marks for three subjects 
+c. Create a subless PG_Student that extends student class which has the data 
+members USN, Name and Total No. of Semesters ( ToS) and marks for three 
+subjects 
+d. Define the main function to display the details for three students using arrays 
+of objects. */
+import java.util.*; 
+class students 
+{ 
+String USN, Name; 
+int age; 
+double m1, m2, m3; 
+students(String USN, String Name, int age, double m1, double m2, double 
+m3) 
+{ 
+this.USN=USN; 
+this.Name=Name; 
+this.age=age; 
+this.m1=m1; 
+this.m2=m2; 
+this.m3=m3; 
+} 
+} 
+class UG extends students 
+
+ 
+{ 
+int Sem; 
+double Fee, Stipend; 
+String Dept; 
+UG(String USN, String Name, int age, double m1, double m2, double m3, int 
+Sem, double Fee, double Stipend, String Dept) 
+{ 
+super(USN, Name,age,m1,m2, m3); 
+this.Sem=Sem; 
+this.Fee=Fee; 
+this.Stipend=Stipend; 
+this.Dept=Dept; 
+} 
+void display() 
+{ 
+System.out.println("USN=" +super.USN+"\n Name="+super.Name+"\n Age="+su
+per.age+"\n Marks in Subject1="+super.m1+"\n Marks in Subject2="+su
+per.m2+"\n Marks in Subject3="+super.m3+"\n Sem="+Sem+"\n Fee="+Fee+"\n 
+Stipend="+Stipend+"\n Dept="+Dept); 
+} 
+void avg() 
+{ 
+System.out.println("\n avg of three subject is =\n"+((super.m1+su
+per.m2+super.m3)/3)); 
+} 
+} 
+class PG extends students 
+{ 
+int Sem; 
+double Fee, Stipend; 
+String Dept; 
+PG(String USN, String Name, int age, double m1, double m2, double m3, int 
+Sem, double Fee, double Stipend, String Dept) 
+{ 
+super(USN, Name,age,m1,m2, m3); 
+this.Sem=Sem; 
+this.Fee=Fee; 
+this.Stipend=Stipend; 
+this.Dept=Dept; 
+} 
+void display() 
+{ 
+System.out.println("USN=" +super.USN+"\n Name="+super.Name+"\n Age="+su
+per.age+"\n Marks in Subject1="+super.m1+"\n Marks in Subject2="+su
+per.m2+"\n Marks in Subject3="+super.m3+"\n Sem="+Sem+"\n Fee="+Fee+"\n 
+Stipend="+Stipend+"\n Dept="+Dept); 
+} 
+void avg() 
+{ 
+System.out.println("\n avg of three subject is =\n"+((super.m1+su
+per.m2+super.m3)/3)); 
+} 
+} 
+class Studentdetails 
+{ 
+public static void main(String args[]) 
+{ 
+UG student1= new UG("1MS22AI001", "Aravind", 19, 90,91,95, 3, 20000, 
+2000, "AI&ML"); 
+UG student2= new UG("1MS22AI002", "Aryan", 20, 80,81,85, 3, 21000, 2500, 
+"AI&DS"); 
+UG student3= new UG("1MS22AI003", "Abhishek", 21, 50,52,55, 3, 25000, 
+3000, "CIVIL"); 
+
+ 
+PG student4= new PG("1MS25AI001", "Mala", 30, 90,91,95, 1, 50000, 5000, 
+"AI&ML"); 
+PG student5= new PG("1MS25AI002", "Arpitha", 25, 50,51,55, 3, 70000, 
+3000, "AI&DS"); 
+PG student6= new PG("1MS25AI003", "Theju", 23, 90,81,75, 4, 80000, 6000, 
+"Arch"); 
+student1.display(); 
+student1.avg(); 
+student2.display(); 
+student2.avg(); 
+student3.display(); 
+student3.avg(); 
+student4.display(); 
+student4.avg(); 
+student5.display(); 
+student5.avg(); 
+student6.display(); 
+student6.avg(); 
+} 
+} 
+/*
+javac Studentdetails.java 
+java Studentdetails 
+USN=1MS22AI001 
+ Name=Aravind 
+ Age=19 
+ Marks in Subject1=90.0 
+ Marks in Subject2=91.0 
+ Marks in Subject3=95.0 
+ Sem=3 
+ Fee=20000.0 
+ Stipend=2000.0 
+ Dept=AI&ML 
+ 
+ avg of three subject is = 
+92.0 
+USN=1MS22AI002 
+ Name=Aryan 
+ Age=20 
+ Marks in Subject1=80.0 
+ Marks in Subject2=81.0 
+ Marks in Subject3=85.0 
+ Sem=3 
+ Fee=21000.0 
+ Stipend=2500.0 
+ Dept=AI&DS 
+ 
+ avg of three subject is = 
+82.0 
+USN=1MS22AI003 
+ Name=Abhishek 
+ Age=21 
+ Marks in Subject1=50.0 
+ Marks in Subject2=52.0 
+ Marks in Subject3=55.0 
+ Sem=3 
+ Fee=25000.0 
+ Stipend=3000.0 
+ Dept=CIVIL 
+ 
+ avg of three subject is = 
+52.333333333333336 
+USN=1MS25AI001 
+ Name=Mala 
+ Age=30 
+18 
+ 
+ Marks in Subject1=90.0 
+ Marks in Subject2=91.0 
+ Marks in Subject3=95.0 
+ Sem=1 
+ Fee=50000.0 
+ Stipend=5000.0 
+ Dept=AI&ML 
+ 
+ avg of three subject is = 
+92.0 
+USN=1MS25AI002 
+ Name=Arpitha 
+ Age=25 
+ Marks in Subject1=50.0 
+ Marks in Subject2=51.0 
+ Marks in Subject3=55.0 
+ Sem=3 
+ Fee=70000.0 
+ Stipend=3000.0 
+ Dept=AI&DS 
+ 
+ avg of three subject is = 
+52.0 
+USN=1MS25AI003 
+ Name=Theju 
+ Age=23 
+ Marks in Subject1=90.0 
+ Marks in Subject2=81.0 
+ Marks in Subject3=75.0 
+ Sem=4 
+ Fee=80000.0 
+ Stipend=6000.0 
+ Dept=Arch 
+ 
+ avg of three subject is = 
+82.0*/
