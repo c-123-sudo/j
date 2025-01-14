@@ -1,0 +1,84 @@
+/*Write a java program to maintain the student details like USN, Dept names, 3 subject 
+grades and SGPA in student package and keep the staff details such as Staffid, 
+StaffName, designation and subjects handled in a staff package. In main class use 
+these two packages details for Staff and Student classes and display the student and 
+staff information as requested by the user.*/
+
+ 
+package details; 
+public class Student 
+{ 
+ String name,dept,grade1,grade2,grade3,usn; 
+ double sgpa,cgpa; 
+ public Student(String n,String u,String d,String g1,String g2, String 
+g3,double s) 
+ { 
+  name=n; 
+  usn=u; 
+  dept=d; 
+  grade1=g1; 
+  grade2=g2; 
+  grade3=g3; 
+  sgpa=s; 
+ } 
+ public void show() 
+ { 
+  System.out.println("Student Name:"+name+" with USN: "+usn+" of 
+Department: "+dept); 
+  System.out.println("The Grades are "+grade1+","+grade2+","+grade3); 
+ } 
+} 
+ 
+package staffdetails; 
+public class Staff 
+{ 
+ String stn,std; 
+ int stID; 
+ String[] sub = new String[] {"Maths", "OOPS", "Database System"};  
+ public Staff(String sn, int sid, String stdn) 
+ { 
+  stn = sn; 
+  stID = sid; 
+  std = stdn; 
+ } 
+ public void show1() 
+ { 
+  System.out.println("Staff Name: "+stn+" ID "+stID+" with Designation 
+"+std+". \nSubjects handled are "); 
+  for (int i = 0; i <= 2; i++)  
+  { 
+            System.out.println(sub[i] + " "); 
+      } 
+  }  
+} 
+ 
+
+ 
+import details.Student; 
+import staffdetails.Staff; 
+ 
+public class Demo 
+{ 
+ public static void main(String args[]) 
+ { 
+  Student s=new Student("Yash","1MS21AI032","AIML","A","A","A",10); 
+  Staff st=new Staff("Roger",10075,"Professor"); 
+  s.show(); 
+  st.show1(); 
+ } 
+} 
+ 
+ 
+/*Output: 
+ 
+javac -d . Staff.java 
+javac -d . Student.java 
+javac Demo.java 
+java Demo 
+Student Name:Yash with USN: 1MS21AI032 of Department: AIML 
+The Grades are A,A,A 
+Staff Name: Roger ID 10075 with Designation Professor.  
+Subjects handled are  
+Maths  
+OOPS  
+Database System  */
