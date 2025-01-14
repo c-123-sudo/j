@@ -1,0 +1,49 @@
+/*Write a Java program to demonstrate exception handling using try, multiple catch 
+block and finally block. Throw an error in try block to handle array out of bound 
+index. 
+ */
+
+ 
+public class MultipleCatchDemo 
+{ 
+   public static void main(String[] args) 
+   { 
+       try 
+       { 
+         System.out.println("try Block:: Begin"); 
+         String[] arr = {"Rohit","Shikar","Virat","Dhoni"}; 
+         for(int i=0;i<=arr.length;i++)  
+         { 
+
+ 
+          System.out.println(arr[i]); 
+         } 
+       } 
+       catch(ArithmeticException e) 
+       { 
+          System.out.println("Arithmetic Exception :: Divide by zero!!"); 
+       } 
+       catch(ArrayIndexOutOfBoundsException e) 
+       { 
+          System.out.println("ArrayIndexOutOfBounds :: Accessed index out of 
+bounds"); 
+       } 
+       catch(Exception e) 
+       { 
+          System.out.println("Exception :: " + e.getMessage ()); 
+       } 
+       System.out.println("rest of the code"); 
+   } 
+} 
+/* 
+Output: 
+ 
+javac MultipleCatchDemo.java 
+ritadmin@DS705-72:~/Desktop/Executed Pgms ADL37$ java MultipleCatchDemo 
+try Block:: Begin 
+Rohit 
+Shikar 
+Virat 
+Dhoni 
+ArrayIndexOutOfBounds :: Accessed index out of bounds 
+rest of the code*/
