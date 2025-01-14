@@ -1,0 +1,36 @@
+/*Write a java program to keep details of bank customer name and balance in MyPack 
+package, Initialize using contractors and define display function. In main class use 
+this package and pass the information (name and balance) and display using 
+display function. */
+
+package MyPack; 
+public class Balance 
+{ 
+String name; 
+double bal;  
+public Balance(String n, double b) 
+{ 
+name=n; 
+bal=b; 
+} 
+public void show() 
+{ 
+if (bal>0) 
+System.out.println("Name: "name+"\n Balance: "+bal); 
+} 
+} 
+import MyPack.Balance; 
+class TestBalance 
+{ 
+public static void main(String args[]) 
+{ 
+Balance test=new Balance("abc",99.8); 
+test.show(); 
+} 
+} 
+/*Output: 
+javac -d . Balance.java 
+javac TestBalance.java 
+java TestBalance 
+Name: Edward 
+Balance: 99.8*/
